@@ -1,16 +1,16 @@
 {% extends "app/base.html" %}
 {% block content %}
 {% load static %}
-<section id="home-section" class="hero">
+<section id="home-section" class="hero scrollbar">
     <div class="home-slider  owl-carousel">
         <div class="slider-item ">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
                      data-scrollax-parent="true">
-                    <div class="one-third js-fullheight order-md-last img">
+                    <div class="one-third js-fullheight order-md-last img"
+                         style="background-image:url({{person.image.url}});">
                         <div class="overlay"></div>
-                        <img src="{{person.image.url}}" alt="">
                     </div>
                     <div class="one-forth d-flex  align-items-center ftco-animate"
                          data-scrollax=" properties: { translateY: '70%' }">
