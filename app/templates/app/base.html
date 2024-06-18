@@ -30,7 +30,16 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
   </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  <style>
+    .scrollable {
+    width: 300px;
+    height: 200px;
+    overflow: auto; /* or overflow-y: scroll; for only vertical scrollbar, overflow-x: scroll; for only horizontal scrollbar */
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+  </style>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" class="scrollbar">
     <nav
       class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target"
       id="ftco-navbar"
