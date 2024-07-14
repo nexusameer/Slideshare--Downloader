@@ -10,7 +10,8 @@ def index(request):
     person = Person.load()
     background = Background.objects.all()
     skills = Skills.objects.all()
-    project = Projects.objects.all
+    project = Projects.objects.all()
+    languages = Languages.objects.all()
     if request.method == 'POST':
         name = request.POST.get('name')
         subject = request.POST.get('subject')
@@ -34,6 +35,7 @@ def index(request):
         'background': background,
         'skills': skills,
         'project': project,
+        'languages': languages,
     }
     return render(request, 'app/index.html', context)
 

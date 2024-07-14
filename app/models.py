@@ -52,11 +52,20 @@ class Background(models.Model):
 
 class Skills(models.Model):
     name = models.CharField(max_length=100)
-    percentage = models.IntegerField()
 
     def __str__(self):
         return self.name
 
+
+class Languages(models.Model):
+    name = models.CharField(max_length=100)
+    percentage = models.IntegerField()
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        ordering = ['-id']
 
 class Projects(models.Model):
     title = models.CharField(max_length=200)

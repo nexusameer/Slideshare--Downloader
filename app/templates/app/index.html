@@ -17,7 +17,7 @@
                         <div class="text">
                             <span class="subheading">Hello!</span>
                             <h1 class="mb-4 mt-3">I'm <span>{{person.name}}</span></h1>
-                            <h2 class="mb-4">A Freelance Web Developer</h2>
+                            <h2 class="mb-4">A Web Developer</h2>
                             <p><a href="#about-section" class="btn btn-primary py-3 px-4">About</a>
                                 <a href="#projects-section" class="btn btn-white btn-outline-white py-3 px-4">My Projects</a></p>
                         </div>
@@ -70,7 +70,7 @@
                         <p>{{person.desc}}</p>
                         <ul class="about-info mt-4 px-md-0 px-2">
                             <li class="d-flex"><span>Name:</span> <span>{{person.name}}</span></li>
-                            <li class="d-flex"><span>Date of birth:</span> <span>{{person.dob}}</span></li>
+                            <!-- <li class="d-flex"><span>Date of birth:</span> <span>{{person.dob}}</span></li> -->
                             <li class="d-flex"><span>Address:</span> <span>{{person.address}}</span></li>
                             <li class="d-flex"><span>Zip code:</span> <span>{{person.zip_code}}</span></li>
                             <li class="d-flex"><span>Email:</span> <span>{{person.email}}</span></li>
@@ -78,7 +78,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="counter-wrap ftco-animate d-flex mt-md-3">
+                <!-- <div class="counter-wrap ftco-animate d-flex mt-md-3">
                     <div class="text">
                         <p class="mb-4">
                             <span class="number" data-number="{{person.com_projects}}">0</span>
@@ -86,7 +86,7 @@
                         </p>
                         <p><a href="{% url 'download_document' person.id %}" class="btn btn-primary py-3 px-3">Download CV</a></p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -127,73 +127,24 @@
     <div class="container">
         <div class="row justify-content-center py-5 mt-5">
             <div class="col-md-12 heading-section text-center ftco-animate">
-                <h1 class="big big-2">Services</h1>
-                <h2 class="mb-4">Services</h2>
+                <h1 class="big big-2">Skills</h1>
+                <h2 class="mb-4">Skills</h2>
                 <p>Cutting-Edge Solutions & Development Services: Empowering Your Online Presence with Innovation and Expertise</p>
             </div>
         </div>
         <div class="row">
+            {% for skill in skills %}
             <div class="col-md-4 text-center d-flex ftco-animate">
                 <a href="#" class="services-1">
 							<span class="icon">
 								<i class="flaticon-flasks"></i>
 							</span>
                     <div class="desc">
-                        <h3 class="mb-5">DJANGO DEVELOPER</h3>
+                        <h3 class="mb-5">{{skill.name}}</h3>
                     </div>
                 </a>
             </div>
-            <div class="col-md-4 text-center d-flex ftco-animate">
-                <a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-analysis"></i>
-							</span>
-                    <div class="desc">
-                        <h3 class="mb-5">Web Design</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 text-center d-flex ftco-animate">
-                <a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-ideas"></i>
-							</span>
-                    <div class="desc">
-                        <h3 class="mb-5">Web Developer</h3>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-4 text-center d-flex ftco-animate">
-                <a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-analysis"></i>
-							</span>
-                    <div class="desc">
-                        <h3 class="mb-5">sdlc</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 text-center d-flex ftco-animate">
-                <a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-flasks"></i>
-							</span>
-                    <div class="desc">
-                        <h3 class="mb-5">problem solving</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 text-center d-flex ftco-animate">
-                <a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-ideas"></i>
-							</span>
-                    <div class="desc">
-                        <h3 class="mb-5">Product Strategy</h3>
-                    </div>
-                </a>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -203,20 +154,20 @@
     <div class="container">
         <div class="row justify-content-center pb-5">
             <div class="col-md-12 heading-section text-center ftco-animate">
-                <h1 class="big big-2">Skills</h1>
-                <h2 class="mb-4">My Skills</h2>
+                <h1 class="big big-2">Languages & Framworks</h1>
+                <h2 class="mb-4">Languages & Framworks</h2>
                 <p>There’s no use in pushing boundaries if it’s not for innovation.</p>
             </div>
         </div>
         <div class="row">
-            {% for s in skills %}
+            {% for l in languages %}
             <div class="col-md-6 animate-box">
                 <div class="progress-wrap ftco-animate">
-                    <h3>{{s.name}}</h3>
+                    <h3>{{l.name}}</h3>
                     <div class="progress">
-                        <div class="progress-bar color-1" role="progressbar" aria-valuenow="{{s.percentage}}"
-                             aria-valuemin="0" aria-valuemax="100" style="width:{{s.percentage}}%">
-                            <span>{{s.percentage}}%</span>
+                        <div class="progress-bar color-1" role="progressbar" aria-valuenow="{{l.percentage}}"
+                             aria-valuemin="0" aria-valuemax="100" style="width:{{l.percentage}}%">
+                            <span>{{l.percentage}}%</span>
                         </div>
                     </div>
                 </div>
@@ -232,8 +183,8 @@
         <div class="row justify-content-center pb-5">
             <div class="col-md-12 heading-section text-center ftco-animate">
                 <h1 class="big big-2">Projects</h1>
-                <h2 class="mb-4">Our Projects</h2>
-                <p>Value-based upscaling is at the heart of a Developer. From learning to implementation, I will stay ahead in your orders.</p>
+                <h2 class="mb-4">My Projects</h2>
+                <p>Value-based upscaling is at the heart of a Developer. From learning to implementation, I will work with full dedication.</p>
             </div>
         </div>
         <div class="row">
@@ -254,7 +205,7 @@
 </section>
 
 
-<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+<!-- <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
     <div class="container">
         <div class="row d-md-flex align-items-center">
             <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
@@ -291,20 +242,20 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
-<section class="ftco-section ftco-hireme img margin-top"
+<!-- <section class="ftco-section ftco-hireme img margin-top"
          style="background-image: url({% static 'portfolio/images/bg_1.jpg' %})">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-7 ftco-animate text-center">
-                <h2>I'm Available for freelancing</h2>
+                <h2>I'm Available</h2>
                 <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                 <p class="mb-1"><a href="#contact-section" class="btn btn-primary py-3 px-5">Hire me</a></p>
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
     <div class="container">
@@ -347,9 +298,9 @@
             <div class="col-md-6 col-lg-3 d-flex ftco-animate">
                 <div class="align-self-stretch box p-4 text-center">
                     <div class="icon d-flex align-items-center justify-content-center">
-                        <span class="icon-globe"></span>
+                        <span class="icon-linkedin"></span>
                     </div>
-                    <h3 class="mb-4">Website</h3>
+                    <h3 class="mb-4">Linkedin</h3>
                     <p><a href="#">{{person.website}}</a></p>
                 </div>
             </div>
